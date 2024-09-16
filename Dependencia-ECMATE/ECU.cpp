@@ -1,5 +1,5 @@
 #include "Ecu.h"
-
+#include "Matem.h"
 
 ECU::ECU(){
 	a = 1;
@@ -31,20 +31,15 @@ string ECU::toString(){
 }
 
 bool ECU::esECU(){
-	if (a != 0)
-		return true;
-	else
-		return false;
+	return Matem::esECU(a);
 }
 
-double ECU::discrim() { return b * b - 4 * a * c; } // Calculo Discriminante
+double ECU::discrim() { return Matem::discrim(a, b, c); } // Calculo Discriminante
 
 int ECU::numSolucion(){ 
-	if (discrim() > 0) return 2; // Tiene 2 soluciones
-	if (discrim() == 0) return 1;// Tiene 1 solucion
-	else return 0;// No tiene solucion
+	return Matem::numSolucion(a, b, c);
 }
 
-double ECU::solUno() { return (-b + sqrt(discrim())) / (2 * a); }
+double ECU::solUno() { return Matem::solUno(a,b,c); }
 
-double ECU::solDos(){ return (-b - sqrt(discrim())) / (2 * a); }
+double ECU::solDos(){ return Matem::sol2(a, b, c);}
