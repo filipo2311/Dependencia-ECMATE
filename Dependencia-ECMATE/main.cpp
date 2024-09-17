@@ -7,7 +7,7 @@ int main() {
 	ECU* ecu = new ECU; //Constructor por defecto (1, 0, 0)
 
 	do {
-		system("cls");
+		
 		cout << "-----------Trabajando con Ecuaciones Cuadraticas----------" << endl;
 		cout << "----------- MENU -------------" << endl;
 		cout << "1- Cambiar Coef Numericos de la ecuacion " << endl;

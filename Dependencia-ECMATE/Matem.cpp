@@ -10,18 +10,18 @@ bool Matem::esECU(double aa) {
 		return false;
 }
 
-double discrim(double aa, double bb, double cc) {
+double Matem::discrim(double aa, double bb, double cc) {
 	return bb * bb - 4 * aa * cc;
 }
-int numSolucion(double aa, double bb, double cc) {
+int Matem::numSolucion(double aa, double bb, double cc) {
 
 	if (discrim(aa ,bb, cc) > 0) return 2; // Tiene 2 soluciones
 	if (discrim(aa, bb, cc) == 0) return 1;// Tiene 1 solucion
 	else return 0;// No tiene solucion
 }
 
-double solUno(double aa, double bb, double cc) { return (-bb + sqrt(discrim(aa, bb, cc))) / (2 * aa); }
+double Matem::solUno(double aa, double bb, double cc) { return (-bb + sqrt(discrim(aa, bb, cc))) / (2 * aa); }
 
-double sol2(double aa, double bb, double cc) { return (-bb - sqrt(discrim(aa, bb, cc))) / (2 * aa); }
+double Matem::sol2(double aa, double bb, double cc) { return (-bb - sqrt(discrim(aa, bb, cc))) / (2 * aa); }
 
 
